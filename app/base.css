@@ -1,0 +1,136 @@
+@import url(https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Caveat&display=swap);
+
+:root {
+  /* Overlay layers */
+  --z-overlay: 400;
+
+  --z-spotlight: 1000; /* Tutorial spotlights/guided help */
+
+  /* System layers */
+  --z-critical: 2000; /* Critical system notifications */
+
+  /* spacing */
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
+  --spacing-20: 5rem;
+}
+
+:root {
+  --z-content: 20;
+  --z-nav: 200;
+  --background: hsl(40, 25%, 97%);
+  --foreground: hsl(190, 30%, 12%);
+  --surface: hsl(40, 20%, 93%);
+  --surface-foreground: var(--foreground);
+  --sidebar: hsl(190, 40%, 11%);
+  --sidebar-foreground: hsl(40, 20%, 92%);
+  --sidebar-muted: hsl(190, 15%, 62%);
+  --sidebar-active: hsl(185, 35%, 20%);
+  --card: hsl(40, 30%, 99%);
+  --card-foreground: var(--foreground);
+  --popup: hsl(40, 30%, 99%);
+  --popup-foreground: var(--foreground);
+  --primary: hsl(186, 62%, 28%);
+  --primary-foreground: hsl(40, 30%, 98%);
+  --primary-soft: hsla(186, 62%, 32%, 0.1);
+  --secondary: hsl(40, 18%, 90%);
+  --secondary-foreground: hsl(190, 30%, 15%);
+  --accent: hsl(186, 45%, 92%);
+  --accent-foreground: hsl(186, 62%, 22%);
+  --muted: hsl(40, 15%, 90%);
+  --muted-foreground: hsl(190, 10%, 40%);
+  --success: hsl(152, 55%, 33%);
+  --success-foreground: hsl(0, 0%, 100%);
+  --success-soft: hsla(152, 55%, 35%, 0.12);
+  --error: hsl(4, 68%, 47%);
+  --error-foreground: hsl(0, 0%, 100%);
+  --error-soft: hsla(4, 68%, 50%, 0.1);
+  --warning: hsl(36, 90%, 45%);
+  --warning-foreground: hsl(36, 60%, 12%);
+  --warning-soft: hsla(36, 90%, 50%, 0.14);
+  --info: hsl(205, 60%, 42%);
+  --info-foreground: hsl(0, 0%, 100%);
+  --info-hover: hsl(205, 60%, 37%);
+  --info-active: hsl(205, 60%, 32%);
+  --evidence: hsla(186, 70%, 40%, 0.18);
+  --border: hsl(40, 12%, 85%);
+  --font-family-base: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-family-display: "Newsreader", Georgia, "Times New Roman", serif;
+  --font-family-heading: var(--font-family-display);
+  --font-family-monospace: "IBM Plex Mono", SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+  --font-family-cursive: "Caveat", cursive;
+  --shadow: 0 1px 2px hsla(190, 30%, 10%, 0.04), 0 2px 6px hsla(190, 30%, 10%, 0.04);
+  --shadow-md: 0 1px 3px hsla(190, 30%, 10%, 0.05), 0 8px 20px -6px hsla(190, 30%, 10%, 0.08);
+  --shadow-lg: 0 2px 4px hsla(190, 30%, 10%, 0.05), 0 20px 40px -10px hsla(190, 30%, 10%, 0.14);
+  --shadow-focus: 0 0 0 3px hsla(186, 62%, 35%, 0.25);
+  --radius-sm: 6px;
+  --radius: 8px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-full: 9999px;
+  --animation-duration-fast: 120ms;
+  --animation-duration-normal: 220ms;
+  --animation-duration-slow: 360ms;
+  --chart-color-1: hsl(186, 62%, 30%);
+  --chart-color-2: hsl(36, 85%, 50%);
+  --chart-color-3: hsl(4, 65%, 50%);
+  --chart-color-4: hsl(152, 50%, 38%);
+  --chart-color-5: hsl(205, 50%, 55%);
+}
+
+.dark {
+  --background: hsl(192, 30%, 8%);
+  --foreground: hsl(40, 20%, 92%);
+  --surface: hsl(192, 26%, 11%);
+  --surface-foreground: var(--foreground);
+  --sidebar: hsl(192, 35%, 6%);
+  --sidebar-foreground: hsl(40, 20%, 92%);
+  --sidebar-muted: hsl(190, 12%, 58%);
+  --sidebar-active: hsl(186, 30%, 16%);
+  --card: hsl(192, 26%, 11%);
+  --card-foreground: var(--foreground);
+  --popup: hsl(192, 26%, 13%);
+  --popup-foreground: var(--foreground);
+  --primary: hsl(184, 50%, 52%);
+  --primary-foreground: hsl(192, 35%, 8%);
+  --primary-soft: hsla(184, 50%, 52%, 0.14);
+  --secondary: hsl(192, 20%, 17%);
+  --secondary-foreground: hsl(40, 20%, 90%);
+  --accent: hsl(186, 30%, 18%);
+  --accent-foreground: hsl(184, 50%, 70%);
+  --muted: hsl(192, 18%, 17%);
+  --muted-foreground: hsl(190, 10%, 65%);
+  --success: hsl(152, 45%, 50%);
+  --success-foreground: hsl(192, 35%, 8%);
+  --success-soft: hsla(152, 45%, 50%, 0.15);
+  --error: hsl(4, 70%, 62%);
+  --error-foreground: hsl(192, 35%, 8%);
+  --error-soft: hsla(4, 70%, 62%, 0.15);
+  --warning: hsl(38, 85%, 58%);
+  --warning-foreground: hsl(38, 60%, 10%);
+  --warning-soft: hsla(38, 85%, 58%, 0.15);
+  --info: hsl(205, 60%, 60%);
+  --info-foreground: hsl(192, 35%, 8%);
+  --info-hover: hsl(205, 60%, 55%);
+  --info-active: hsl(205, 60%, 50%);
+  --evidence: hsla(184, 60%, 50%, 0.22);
+  --border: hsl(192, 18%, 20%);
+  --shadow: 0 1px 2px hsla(0, 0%, 0%, 0.2);
+  --shadow-md: 0 8px 20px -6px hsla(0, 0%, 0%, 0.35);
+  --shadow-lg: 0 20px 40px -10px hsla(0, 0%, 0%, 0.5);
+  --shadow-focus: 0 0 0 3px hsla(184, 50%, 52%, 0.3);
+  --chart-color-1: hsl(184, 50%, 52%);
+  --chart-color-2: hsl(38, 85%, 58%);
+  --chart-color-3: hsl(4, 70%, 62%);
+  --chart-color-4: hsl(152, 45%, 50%);
+  --chart-color-5: hsl(205, 60%, 65%);
+}

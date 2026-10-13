@@ -1,0 +1,127 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+}
+.title {
+  margin: 0;
+  font-family: var(--font-family-display);
+  font-weight: 500;
+  font-size: 2rem;
+}
+.sub {
+  margin: 4px 0 0;
+  color: var(--muted-foreground);
+}
+.samples {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  flex-wrap: wrap;
+}
+.samplesLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--muted-foreground);
+  margin-right: var(--spacing-2);
+}
+.sample {
+  font: inherit;
+  font-size: 0.82rem;
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--foreground);
+  cursor: pointer;
+}
+.sample:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+.layout {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: var(--spacing-4);
+  align-items: start;
+}
+.noteCard,
+.detailsCard {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow);
+  padding: var(--spacing-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+.cardHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.cardTitle {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--foreground);
+}
+.count {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+  font-variant-numeric: tabular-nums;
+}
+.note {
+  min-height: 420px;
+  font-family: var(--font-family-monospace);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+.phi {
+  display: flex;
+  gap: var(--spacing-2);
+  align-items: flex-start;
+  font-size: 0.82rem;
+  padding: var(--spacing-3);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--muted-foreground);
+}
+.phiFound {
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-3);
+}
+.hint {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+}
+.mono {
+  font-family: var(--font-family-monospace);
+}
+.submit {
+  width: 100%;
+  margin-top: var(--spacing-2);
+}
+@media (max-width: 1000px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}

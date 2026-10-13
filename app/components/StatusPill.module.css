@@ -1,0 +1,46 @@
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.76rem;
+  font-weight: 500;
+  white-space: nowrap;
+  background: var(--muted);
+  color: var(--muted-foreground);
+}
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: currentColor;
+}
+.processing {
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+.processing .dot {
+  animation: pulse 1.2s ease-in-out infinite;
+}
+.needs_review {
+  background: var(--warning-soft);
+  color: var(--warning);
+}
+.ready {
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+.approved {
+  background: var(--success-soft);
+  color: var(--success);
+}
+.error {
+  background: var(--error-soft);
+  color: var(--error);
+}
+@keyframes pulse {
+  50% {
+    opacity: 0.3;
+  }
+}

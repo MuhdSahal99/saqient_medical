@@ -1,0 +1,68 @@
+.wrap {
+  padding: var(--spacing-8);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow);
+}
+.title {
+  margin: 0 0 var(--spacing-6);
+  font-family: var(--font-family-display);
+  font-weight: 500;
+  font-size: 1.4rem;
+}
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+.list li {
+  display: flex;
+  gap: var(--spacing-3);
+  align-items: flex-start;
+  transition: opacity var(--animation-duration-normal);
+}
+.icon {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border);
+  font-size: 0.72rem;
+  color: var(--muted-foreground);
+}
+.name {
+  display: block;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+.detail {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--muted-foreground);
+}
+.done .icon {
+  background: var(--success);
+  border-color: var(--success);
+  color: var(--success-foreground);
+}
+.current .icon {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+.todo {
+  opacity: 0.5;
+}
+.spin {
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

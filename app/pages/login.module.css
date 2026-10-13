@@ -1,0 +1,87 @@
+.page {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  min-height: 100vh;
+  background: var(--background);
+  font-family: var(--font-family-base);
+}
+.story {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--spacing-6);
+  padding: var(--spacing-16);
+  background: var(--sidebar);
+  color: var(--sidebar-foreground);
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  font-family: var(--font-family-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.mark {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius);
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+.headline {
+  font-family: var(--font-family-display);
+  font-weight: 500;
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  line-height: 1.1;
+  margin: 0;
+  max-width: 14ch;
+}
+.lede {
+  color: var(--sidebar-muted);
+  max-width: 46ch;
+  line-height: 1.6;
+  margin: 0;
+}
+.points {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+.points li {
+  display: flex;
+  gap: var(--spacing-3);
+  align-items: center;
+  font-size: 0.95rem;
+}
+.formSide {
+  display: grid;
+  place-items: center;
+  padding: var(--spacing-8);
+}
+.card {
+  width: 100%;
+  max-width: 400px;
+  padding: var(--spacing-8);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+.tabs {
+  width: 100%;
+  margin-bottom: var(--spacing-6);
+}
+@media (max-width: 860px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+  .story {
+    padding: var(--spacing-8) var(--spacing-6);
+  }
+}

@@ -1,0 +1,7 @@
+Thread: "clinical ledger". A precise, calm instrument for money and medicine: warm paper ground, deep teal ink as the single brand accent, hairline rules instead of heavy boxes, tabular numerals for every amount and score, monospace for medical codes. Feels like an audited ledger crossed with a modern clinical chart: trustworthy, quiet, exact.
+Modes: both light and dark. Light is the default (paper), dark is deep ink-teal.
+Pacing: tight. This is a working tool for coders and billing teams; dense but breathable tables, compact cards, 8px rhythm.
+Type: Newsreader (serif) for page titles and big numbers only; IBM Plex Sans for all UI; IBM Plex Mono for codes (ICD-10, CPT), IDs and token counts. Numbers always tabular-nums.
+Color: one dominant accent (teal ink). Status uses meaning-only colors: green = ready/accepted, amber = warning/needs review, red = blocker/high risk. Never decorate with color. Risk is shown as a single horizontal meter, not a rainbow.
+Surfaces: cards are flat with 1px hairline borders and a very soft shadow; radius 10px; no gradients. Sidebar is ink-colored in both modes.
+Detail: evidence from clinical notes is highlighted with a soft teal underline-marker; AI-generated items carry a small "AI" chip; every AI item shows its evidence quote.

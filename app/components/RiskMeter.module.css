@@ -1,0 +1,52 @@
+.wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  min-width: 110px;
+}
+.track {
+  position: relative;
+  flex: 1;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+  overflow: hidden;
+}
+.md .track {
+  height: 8px;
+}
+.fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  border-radius: var(--radius-full);
+  transition: width var(--animation-duration-slow) ease;
+}
+.fill.low {
+  background: var(--success);
+}
+.fill.medium {
+  background: var(--warning);
+}
+.fill.high {
+  background: var(--error);
+}
+.value {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  font-size: 0.85rem;
+  min-width: 38px;
+  text-align: right;
+}
+.value.low {
+  color: var(--success);
+}
+.value.medium {
+  color: var(--warning);
+}
+.value.high {
+  color: var(--error);
+}
+.none {
+  color: var(--muted-foreground);
+  font-size: 0.8rem;
+}

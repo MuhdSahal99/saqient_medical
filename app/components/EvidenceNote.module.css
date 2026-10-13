@@ -1,0 +1,20 @@
+.note {
+  white-space: pre-wrap;
+  font-family: var(--font-family-monospace);
+  font-size: 0.83rem;
+  line-height: 1.75;
+  color: var(--foreground);
+}
+.mark {
+  background: var(--evidence);
+  color: inherit;
+  border-radius: 3px;
+  padding: 1px 0;
+  cursor: pointer;
+  transition: background var(--animation-duration-fast), box-shadow var(--animation-duration-fast);
+}
+.active {
+  background: var(--primary);
+  color: var(--primary-foreground);
+  box-shadow: 0 0 0 2px var(--primary);
+}

@@ -1,0 +1,87 @@
+-- Saqient reference seed data
+--
+-- Exported from the live Floot database for project
+-- 43045b76-e4d1-458e-a907-59dfadc89224 on 2026-10-13 (read-only SELECTs).
+-- Tables: payers, code_sets, payer_rules only. Payers are fictional demo
+-- payers; code_sets are a small public example subset; payer_rules are the
+-- demo rule library. No encounters, users or any patient data are included.
+-- Load after db/schema.sql.
+
+BEGIN;
+
+-- payers (6 rows)
+INSERT INTO payers (id, code, name, market, platform, base_denial_rate, created_at) VALUES (1, 'GMH', 'Gulf Mutual Health (demo)', 'DHA', 'eClaimLink', 0.12, '2026-10-13 11:45:39.246222+00');
+INSERT INTO payers (id, code, name, market, platform, base_denial_rate, created_at) VALUES (2, 'ECI', 'Emirates Care Insurance (demo)', 'DHA', 'eClaimLink', 0.09, '2026-10-13 11:45:39.246222+00');
+INSERT INTO payers (id, code, name, market, platform, base_denial_rate, created_at) VALUES (3, 'ADNP', 'Abu Dhabi National Plan (demo)', 'DOH', 'Shafafiya', 0.08, '2026-10-13 11:45:39.246222+00');
+INSERT INTO payers (id, code, name, market, platform, base_denial_rate, created_at) VALUES (4, 'CAP', 'Capital Health Assurance (demo)', 'DOH', 'Shafafiya', 0.11, '2026-10-13 11:45:39.246222+00');
+INSERT INTO payers (id, code, name, market, platform, base_denial_rate, created_at) VALUES (5, 'NHC', 'Najd Health Cover (demo)', 'KSA', 'NPHIES', 0.18, '2026-10-13 11:45:39.246222+00');
+INSERT INTO payers (id, code, name, market, platform, base_denial_rate, created_at) VALUES (6, 'RSI', 'Red Sea Insurance (demo)', 'KSA', 'NPHIES', 0.15, '2026-10-13 11:45:39.246222+00');
+
+-- code_sets (46 rows)
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (1, 'ICD10CM', 'M54.50', 'Low back pain, unspecified', 'low back pain lumbago lumbar pain backache', 0.25, false);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (2, 'ICD10CM', 'M54.59', 'Other low back pain', 'low back pain lumbar mechanical', 0.1, false);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (3, 'ICD10CM', 'M54.16', 'Radiculopathy, lumbar region', 'radiculopathy sciatica radiating leg pain lumbar nerve root', 0.05, false);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (4, 'ICD10CM', 'M51.26', 'Other intervertebral disc displacement, lumbar region', 'disc herniation prolapse bulge lumbar l4 l5 s1', 0.05, false);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (5, 'ICD10CM', 'M17.11', 'Unilateral primary osteoarthritis, right knee', 'osteoarthritis knee right gonarthrosis degenerative', 0.05, false);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (6, 'ICD10CM', 'M17.12', 'Unilateral primary osteoarthritis, left knee', 'osteoarthritis knee left gonarthrosis degenerative', 0.05, false);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (7, 'ICD10CM', 'S83.511A', 'Sprain of anterior cruciate ligament of right knee, initial encounter', 'acl tear sprain cruciate ligament right knee injury', 0.05, false);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (8, 'ICD10CM', 'M25.561', 'Pain in right knee', 'knee pain right', 0.2, false);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (9, 'ICD10CM', 'M25.562', 'Pain in left knee', 'knee pain left', 0.2, false);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (10, 'ICD10CM', 'J06.9', 'Acute upper respiratory infection, unspecified', 'uri cold upper respiratory infection cough coryza', 0.15, false);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (11, 'ICD10CM', 'J02.9', 'Acute pharyngitis, unspecified', 'sore throat pharyngitis', 0.12, false);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (12, 'ICD10CM', 'J02.0', 'Streptococcal pharyngitis', 'strep throat streptococcal pharyngitis positive rapid strep', 0.03, false);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (13, 'ICD10CM', 'E11.9', 'Type 2 diabetes mellitus without complications', 'diabetes type 2 t2dm dm', 0.05, false);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (14, 'ICD10CM', 'E11.65', 'Type 2 diabetes mellitus with hyperglycemia', 'diabetes type 2 hyperglycemia uncontrolled high hba1c', 0.03, false);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (15, 'ICD10CM', 'I10', 'Essential (primary) hypertension', 'hypertension high blood pressure htn', 0.03, false);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (16, 'ICD10CM', 'L70.0', 'Acne vulgaris', 'acne vulgaris comedones pustules', 0.08, false);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (17, 'ICD10CM', 'L40.0', 'Psoriasis vulgaris', 'psoriasis plaque', 0.05, false);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (18, 'ICD10CM', 'R51.9', 'Headache, unspecified', 'headache cephalgia', 0.2, false);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (19, 'ICD10CM', 'R07.9', 'Chest pain, unspecified', 'chest pain', 0.22, false);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (20, 'ICD10CM', 'R10.9', 'Unspecified abdominal pain', 'abdominal pain stomach ache', 0.22, false);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (21, 'ICD10AM', 'M54.5', 'Low back pain', 'low back pain lumbago lumbar pain backache', 0.2, false);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (22, 'ICD10AM', 'M51.2', 'Other specified intervertebral disc displacement', 'disc herniation prolapse bulge lumbar', 0.05, false);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (23, 'ICD10AM', 'M54.16', 'Radiculopathy, lumbar region', 'radiculopathy sciatica radiating leg pain lumbar', 0.05, false);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (24, 'ICD10AM', 'M17.1', 'Other primary gonarthrosis', 'osteoarthritis knee gonarthrosis degenerative', 0.05, false);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (25, 'ICD10AM', 'J06.9', 'Acute upper respiratory infection, unspecified', 'uri cold upper respiratory infection cough', 0.15, false);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (26, 'ICD10AM', 'E11.9', 'Type 2 diabetes mellitus without complication', 'diabetes type 2 t2dm', 0.05, false);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (27, 'ICD10AM', 'I10', 'Essential (primary) hypertension', 'hypertension high blood pressure htn', 0.03, false);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (28, 'ICD10AM', 'L70.0', 'Acne vulgaris', 'acne vulgaris', 0.08, false);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (29, 'CPT', '99203', 'Office or other outpatient visit, new patient, low medical decision making', 'new patient consultation visit', 0.05, false);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (30, 'CPT', '99213', 'Office or other outpatient visit, established patient, low medical decision making', 'follow up visit consultation established', 0.05, false);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (31, 'CPT', '99214', 'Office or other outpatient visit, established patient, moderate medical decision making', 'follow up visit consultation established moderate complexity', 0.15, false);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (32, 'CPT', '99284', 'Emergency department visit, moderate medical decision making', 'emergency department er visit', 0.1, false);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (33, 'CPT', '72148', 'MRI lumbar spine without contrast', 'mri lumbar spine magnetic resonance', 0.35, true);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (34, 'CPT', '73721', 'MRI any joint of lower extremity without contrast', 'mri knee joint magnetic resonance', 0.3, true);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (35, 'CPT', '72100', 'X-ray lumbosacral spine, 2 or 3 views', 'x-ray xray radiograph lumbar spine', 0.05, false);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (36, 'CPT', '73560', 'X-ray knee, 1 or 2 views', 'x-ray xray radiograph knee', 0.05, false);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (37, 'CPT', '29881', 'Arthroscopy, knee, surgical, with meniscectomy (medial or lateral)', 'arthroscopy meniscectomy meniscus tear knee surgery', 0.3, true);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (38, 'CPT', '27447', 'Total knee arthroplasty', 'total knee replacement arthroplasty tkr', 0.25, true);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (39, 'CPT', '20610', 'Arthrocentesis, aspiration and/or injection, major joint', 'joint injection steroid knee intra-articular aspiration', 0.1, false);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (40, 'CPT', '96372', 'Therapeutic, prophylactic, or diagnostic injection, subcutaneous or intramuscular', 'im injection intramuscular subcutaneous', 0.08, false);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (41, 'CPT', '85025', 'Complete blood count (CBC) with automated differential', 'cbc blood count', 0.03, false);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (42, 'CPT', '83036', 'Hemoglobin A1c', 'hba1c a1c glycated hemoglobin', 0.03, false);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (43, 'CPT', '80053', 'Comprehensive metabolic panel', 'cmp metabolic panel electrolytes renal liver', 0.04, false);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (44, 'CPT', '87880', 'Infectious agent antigen detection, Streptococcus group A (rapid test)', 'rapid strep test', 0.03, false);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (45, 'CPT', '97110', 'Therapeutic exercises, each 15 minutes', 'physiotherapy physical therapy exercises', 0.12, false);
+INSERT INTO code_sets (id, system, code, description, keywords, denial_weight, requires_preauth) VALUES (46, 'CPT', '11102', 'Tangential biopsy of skin, single lesion', 'skin biopsy shave lesion', 0.08, false);
+
+-- payer_rules (12 rows)
+INSERT INTO payer_rules (id, rule_key, name, description, market, payer_id, rule_type, severity, params, reference, active, version, updated_at) VALUES (1, 'PRIMARY_DX', 'Primary diagnosis present', 'Every claim needs one primary diagnosis that explains the encounter.', NULL, NULL, 'primary_dx_required', 'block', '{}', 'Payer claim data standards (eClaimLink, Shafafiya, NPHIES)', true, 1, '2026-10-13 11:45:39.246222+00');
+INSERT INTO payer_rules (id, rule_key, name, description, market, payer_id, rule_type, severity, params, reference, active, version, updated_at) VALUES (2, 'CODE_VALID', 'Codes exist in the active code set', 'Every code must exist in the market''s active code set and version.', NULL, NULL, 'code_exists', 'block', '{}', 'Code set tables per market', true, 1, '2026-10-13 11:45:39.246222+00');
+INSERT INTO payer_rules (id, rule_key, name, description, market, payer_id, rule_type, severity, params, reference, active, version, updated_at) VALUES (3, 'MARKET_SYSTEM', 'Correct code family for the market', 'UAE claims use ICD-10-CM and CPT; Saudi NPHIES claims use ICD-10-AM and ACHI/SBS.', NULL, NULL, 'market_code_system', 'block', '{"DHA": ["ICD10CM", "CPT"], "DOH": ["ICD10CM", "CPT"], "KSA": ["ICD10AM", "ACHI"]}', 'DHA/DoH e-claims standards; CHI NPHIES coding requirements', true, 1, '2026-10-13 11:45:39.246222+00');
+INSERT INTO payer_rules (id, rule_key, name, description, market, payer_id, rule_type, severity, params, reference, active, version, updated_at) VALUES (4, 'DUPLICATE', 'No duplicate codes', 'The same code should not appear twice on one claim.', NULL, NULL, 'duplicate_codes', 'block', '{}', 'General claim edit', true, 1, '2026-10-13 11:45:39.246222+00');
+INSERT INTO payer_rules (id, rule_key, name, description, market, payer_id, rule_type, severity, params, reference, active, version, updated_at) VALUES (5, 'PREAUTH', 'Prior authorization required', 'Listed procedures require a prior approval before the claim is submitted.', NULL, NULL, 'preauth_required', 'warn', '{}', 'Dubai Claims Management Policy Directive 2025: request within 1 hour of order', true, 1, '2026-10-13 11:45:39.246222+00');
+INSERT INTO payer_rules (id, rule_key, name, description, market, payer_id, rule_type, severity, params, reference, active, version, updated_at) VALUES (6, 'NECESSITY', 'Medical necessity documented', 'High-cost imaging and surgery need documented necessity (failed conservative care, red flags, or exam findings).', NULL, NULL, 'medical_necessity', 'warn', '{}', 'Payer medical policies; most common Saudi denial cause (40.5%)', true, 1, '2026-10-13 11:45:39.246222+00');
+INSERT INTO payer_rules (id, rule_key, name, description, market, payer_id, rule_type, severity, params, reference, active, version, updated_at) VALUES (7, 'UNSPECIFIED', 'Avoid unspecified diagnoses when the note is specific', 'Unspecified codes are a frequent denial trigger when the note supports a more specific code.', NULL, NULL, 'unspecified_dx', 'warn', '{}', 'Payer coding edits', true, 1, '2026-10-13 11:45:39.246222+00');
+INSERT INTO payer_rules (id, rule_key, name, description, market, payer_id, rule_type, severity, params, reference, active, version, updated_at) VALUES (8, 'DX_PX_LINK', 'Every procedure is supported by a diagnosis', 'A procedure without a supporting diagnosis is denied for medical necessity.', NULL, NULL, 'dx_supports_px', 'warn', '{}', 'Payer medical necessity edits', true, 1, '2026-10-13 11:45:39.246222+00');
+INSERT INTO payer_rules (id, rule_key, name, description, market, payer_id, rule_type, severity, params, reference, active, version, updated_at) VALUES (9, 'AI_EVIDENCE', 'AI-suggested codes must be well supported', 'Suggestions the verifier agent scored as weakly supported must be checked by a coder.', NULL, NULL, 'low_evidence_ai', 'warn', '{"threshold": 0.5}', 'Saqient guardrail', true, 1, '2026-10-13 11:45:39.246222+00');
+INSERT INTO payer_rules (id, rule_key, name, description, market, payer_id, rule_type, severity, params, reference, active, version, updated_at) VALUES (10, 'EM_LEVEL', 'Visit level matches documentation', 'Moderate-complexity visits (99214) need documentation of moderate decision making.', 'DHA', NULL, 'em_level_documentation', 'info', '{"code": "99214", "minChars": 500}', 'CPT E/M guidelines', true, 1, '2026-10-13 11:45:39.246222+00');
+INSERT INTO payer_rules (id, rule_key, name, description, market, payer_id, rule_type, severity, params, reference, active, version, updated_at) VALUES (11, 'LATE_SUBMISSION', 'Submit within the payer window', 'Late claims attract delay fees of 0.03% of the claim per day in Dubai.', 'DHA', NULL, 'submission_window', 'warn', '{"days": 30}', 'DHIC Claims Management Policy Directive (Nov 2025)', true, 1, '2026-10-13 11:45:39.246222+00');
+INSERT INTO payer_rules (id, rule_key, name, description, market, payer_id, rule_type, severity, params, reference, active, version, updated_at) VALUES (12, 'ACHI_PACK', 'Licensed procedure code pack loaded', 'Saudi procedures need the licensed ACHI/SBS pack; this demo has none, so procedures cannot be auto-coded.', 'KSA', NULL, 'achi_pack_missing', 'info', '{}', 'CHI: ICD-10-AM, ACHI and ACS 10th ed. on NPHIES', true, 1, '2026-10-13 11:45:39.246222+00');
+
+-- Advance sequences past the explicit ids above.
+SELECT setval('payers_id_seq', (SELECT max(id) FROM payers));
+SELECT setval('code_sets_id_seq', (SELECT max(id) FROM code_sets));
+SELECT setval('payer_rules_id_seq', (SELECT max(id) FROM payer_rules));
+
+COMMIT;
